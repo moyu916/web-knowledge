@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        var btn_all = document.querySelector('#j_cbAll');
+        var btns = document.querySelector('tbody').querySelectorAll('input');
+        //全选按钮
+        btn_all.addEventListener('click',function(){
+            if(this.checked)
+            {
+                for(var i=0; i<btns.length; i++)
+                {
+                    btns[i].checked = true;
+                }
+            }
+            else{
+                for(var i=0; i<btns.length; i++)
+                {
+                    btns[i].checked = false;
+                }
+            }
+        })
+        //单个按钮
+        for (var i = 0; i < btns.length; i++) {
+           btns[i].addEventListener('click',function(){
+               var flag = 1;
+               for(var j=0;j<btns.length;j++)
+               {
+                   if(!btns[j].checked)
+                   {
+                       flag = 0;
+                   }
+
+               }
+               btn_all.checked = flag;
+           })
+            
+        }
+
+
+    </script>
+</body>
+</html>

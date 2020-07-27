@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header, section, footer {
+            width: 960px;
+            margin: 0 auto;
+            height: 500px;
+            background-color:pink;
+        }
+        section {
+            background-color: blue;
+
+        }
+        footer {
+            background-color: orange;
+        }
+        .cbl {
+            position: absolute;
+            right: 0;
+            top: 300px;
+            background-color: purple;
+            width: 50px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <section></section>
+    <footer></footer>
+    <div class="cbl"></div>
+
+    <script>
+        var head = document.querySelector('header');
+        var cbl = document.querySelector('.cbl');
+
+        var ttop = cbl.offsetTop;
+        document.addEventListener('scroll',function(){
+            
+            //console.log(this.scrollTop);
+            if(window.pageYOffset >= 150)
+            {
+                //console.log(cbl.offsetTop);
+                cbl.style.position = 'fixed';
+                cbl.style.top = ttop - 150 + 'px';
+                console.log(cbl.style.top);
+            }
+            else{
+                cbl.style.position = 'absolute';
+                cbl.style.top = '300px';
+            }
+
+        })
+    </script>
+</body>
+</html>

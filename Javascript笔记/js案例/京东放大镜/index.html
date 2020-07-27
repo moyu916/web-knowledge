@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .preview_img {
+            height: 400px;
+            width: 400px;
+            position: relative;
+            margin: 50px 50px;
+            border: 1px solid red;
+        }
+        .mask {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            opacity: .5;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .big {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            position: absolute;
+            left: 410px;
+            top: 0px;
+            display: none;
+        }
+        .big img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview_img">
+        <img src="s3.png" alt="" class="simg">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="big.jpg" alt="" class="bigImg">
+        </div>
+    </div>
+
+    <script>
+        var preview = document.querySelector('.preview_img');
+        var mask = document.querySelector('.mask');
+        var big = document.querySelector('.big');
+        var bigImg = document.querySelector('.bigImg');
+
+        //1.鼠标进入产品图片区域，mask和放大镜出现，离开消失
+        preview.addEventListener('mouseover',function(){
+            mask.style.display = 'block';
+            big.style.display = 'block';
+
+            // this.addEventListener('mousemove',function(e){
+            // var x = e.pageX - this.offsetLeft;
+            // var y = e.pageY - this.offsetTop;
+            // mask.style.left = x + 'px';
+            // mask.style.top = y + 'px';
+
+        //})
+
+
+        })
+        preview.addEventListener('mouseout',function(){
+            mask.style.display = 'none';
+            big.style.display = 'none';           
+        })
+        //2.mask跟随鼠标移动
+
+        preview.addEventListener('mousemove',function(e){
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            var maskx = x - mask.offsetWidth/2;
+            var masky = y - mask.offsetHeight/2;
+            if(maskx < 0)
+            {
+                maskx = 0;
+            }
+            else if(maskx > 100)
+            {
+                maskx = 100;
+            }
+            if(masky < 0)
+            {
+                masky = 0;
+            }
+            else if (masky >100)
+            {
+                masky = 100;
+            }
+            mask.style.left = maskx + 'px';
+            mask.style.top = masky + 'px';
+
+            //放大镜效果
+            bigImg.style.left = -maskx * (bigImg.offsetWidth-big.offsetWidth)/(preview.offsetWidth-mask.offsetWidth)+'px';
+            bigImg.style.top = -masky * (bigImg.offsetHeight-big.offsetHeight)/(preview.offsetHeight-mask.offsetHeight)+'px';
+
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

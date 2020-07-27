@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            position: relative;
+        }
+        .large {
+            position: absolute;
+            top:20px;
+            width: 30px;
+            height: 20px;
+            font-size: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class='fa'>
+        <div class="large">123</div>
+        <input type="text">
+    </div>
+    <script>
+        // var input = document.querySelector('input');
+        // var la = document.querySelector('.large');
+        // input.addEventListener('keyup',function(){
+        //     if(this.value != '')
+        //     {
+        //         la.innerHTML = this.value;
+        //         la.style.display = 'block';
+
+        //     }
+        //     else{
+        //         la.style.display = 'none';
+        //     }
+        // }) 
+        // input.addEventListener('focus',function(){
+        //     if(this.value != ''){
+        //         la.style.display = 'block';
+        //     }
+        // })
+        // input.addEventListener('blur',function(){
+        //     la.style.display = 'none';
+        // })
+
+
+        var input = document.querySelector('input');
+        var la = document.querySelector('.large');
+
+        input.addEventListener('focus',function(){
+            if(this.value != ''){
+                 la.style.display = 'block';
+             }
+
+            this.addEventListener('keyup',function(){
+            if(this.value != '')
+            {
+                la.innerHTML = this.value;
+                la.style.display = 'block';
+
+            }
+            else{
+                la.style.display = 'none';
+            }
+        }) 
+        })
+        input.addEventListener('blur',function(){
+            la.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

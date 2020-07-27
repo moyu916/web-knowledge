@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/right.png" alt="">
+    <img src="images/wrong.png" alt="">
+    <img src="images/open.png" alt="">
+
+    <script>
+        var pics = document.querySelectorAll('img');
+        for(var i=0; i<pics.length; i++)
+        {
+            pics[i].addEventListener('click',function(){
+              //document.body.style.backgroundImage = this.src;
+              document.body.style.backgroundImage = 'url(' + this.src +')';
+            })
+        }
+    </script>
+</body>
+</html>
+//错误, 一开始写成18行那样了

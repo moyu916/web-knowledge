@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class = 'fa'>
+        <img src="images/tao.png" alt="">
+        <span>X</span>
+
+    </div>
+    <script>
+        var clo = document.querySelector('span');
+        var fa = document.querySelector('.fa');
+        clo.addEventListener('click',function(){
+            fa.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

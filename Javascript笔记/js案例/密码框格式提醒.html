@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .register {
+                width: 500px;
+                margin: 100px auto;
+                display: inline-block;
+                padding-left: 20px;
+            }
+            .wrong {
+                background: url(images/wrong.png) no-repeat;
+                color: red;
+    
+    
+            }
+            .right {
+                background: url(images/right.png) no-repeat;
+                color: green;
+    
+            }
+        </style>
+    </head>
+    <body>
+        <div class="register">
+            <input type="password">
+            <p class="message">请输入6-16位密码</p>
+        </div>
+        <script>
+            var input = document.querySelector('input');
+            var mes = document.querySelector('.message');
+    
+            input.addEventListener('blur',function(){
+                if(this.value.length<6 || this.value.length>16)
+                {
+                    mes.className = 'message wrong';
+                    mes.innerHTML = '错误';
+    
+                }
+                else{
+                    mes.className = 'message right';
+                    mes.innerHTML = '正确';
+                }
+            })
+        </script>
+    </body>
+</html>

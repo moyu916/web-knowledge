@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="animate.js"></script>
+    <script src="index.js"></script>
+    <style>
+        .focus {
+            width: 721px;
+            height: 455px;
+            position: relative;
+            overflow: hidden;
+        }
+        ul {
+            width: 500%;
+            height: 455px;
+            list-style: none;
+            padding: 0;
+            margin:0 ;
+            position: absolute;
+        }
+        ul li {
+            float: left;
+        }
+        .arrow-l {
+            position: absolute;
+            left: 0;
+            top: 220px;
+            width: 15px;
+            height: 15px;
+            background-color: pink;
+            display: none;
+        }
+        .arrow-r {
+            position: absolute;
+            right: 0;
+            top: 220px;
+            width: 15px;
+            height: 15px;
+            background-color: pink;
+            display: none;
+        }
+        ol {
+            position: absolute;
+            bottom: 0;
+            left: auto;
+            z-index: 2;
+        }
+        .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            float: left;
+            margin-left: 5px;
+        }
+        .current {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="focus"> 
+        <ul>
+            <li><a href=""><img src="images/focus.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/focus1.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/focus2.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/focus3.jpg" alt=""></a></li>
+        </ul>
+        <div class="arrow-l"></div>
+        <div class="arrow-r"></div>
+        <ol></ol>
+    </div>
+
+
+</body>
+</html>

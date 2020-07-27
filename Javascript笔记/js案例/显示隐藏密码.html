@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <input type="password">
+    <img src="images/close.png" alt="">
+</div>
+<script>
+    var input = document.querySelector('input');
+    var pic = document.querySelector('img');
+    var flag = 1;
+
+    pic.addEventListener('click',function(){
+        if(flag === 1)
+        {
+            this.src = 'images/open.png';
+            input.type = 'text';
+            flag = 0;
+        }
+        else{
+            this.src = 'images/close.png';
+            input.type = 'password';
+            flag = 1;           
+        }
+        
+
+    })
+
+</script>
+</body>
+</html>

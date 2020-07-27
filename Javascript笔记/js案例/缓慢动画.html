@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: pink;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button class="a_500">500</button>
+    <button class="a_800">800</button>
+
+    <script>
+
+        function animate(obj,target,callback){
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function(){
+                if(target==obj.offsetLeft)
+                {
+                    clearInterval(obj.timer);
+                    if(callback)
+                    {
+                        callback();
+                    }
+                }
+                var step = (target - obj.offsetLeft) / 10;
+                step = step>0 ? Math.ceil(step) : Math.floor(step);
+                obj.style.left = obj.offsetLeft + step + 'px';
+                console.log(obj.offsetLeft);
+            },30)
+            
+        }
+
+        var div = document.querySelector('div');
+        var a500 = document.querySelector('.a_500');
+        var a800 = document.querySelector('.a_800');
+
+
+
+        a500.addEventListener('click',function(){
+            animate(div,500)
+        });
+        //a500.addEventListener('click',animate(div,500));错误，当传递参数值时，使用"匿名函数"调用带参数的函数：
+        a800.addEventListener('click',function(){
+            animate(div,800)
+        });
+    </script>
+</body>
+</html>

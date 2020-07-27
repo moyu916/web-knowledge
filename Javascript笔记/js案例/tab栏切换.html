@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            display: none;
+        }
+        .current {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <div class="content">1</div>
+    <div class="content">2</div>
+    <div class="content">3</div>
+    <div class="content">4</div>
+
+    <script>
+        var btns = document.querySelectorAll('button');
+        var cons = document.querySelectorAll('.content');
+
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].setAttribute('index',i);
+            
+        // }
+        // for (let i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener('click',function(){
+        //         for (let j = 0; j < btns.length; j++) {
+        //             cons[j].className = 'content';
+                    
+        //         }
+        //         cons[this.getAttribute('index')].className = 'content current';
+        //     })
+            
+        // }
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].setAttribute('index',i);
+            btns[i].addEventListener('click',function(){
+                for (let j = 0; j < btns.length; j++) {
+                    cons[j].className = 'content';
+                }
+                cons[this.getAttribute('index')].className = 'content current';
+            })
+            
+        }
+
+    </script>
+</body>
+</html>
+//错误 见注释掉的code，没考虑异步问题，再就是自定义属性的获取用getAttribute

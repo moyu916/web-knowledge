@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        //循环完成
+        // //var lis = document.querySelectorAll('li');
+        // var lis = document.querySelector('ul').children;
+
+        // for (let i = 0; i < lis.length; i++) {
+        //     lis[i].addEventListener('click',fn);
+            
+        // }
+        // function fn(){
+        //     for (let j = 0; j < lis.length; j++) {
+        //         lis[j].style.backgroundColor = '';
+        //     }
+        //     this.style.backgroundColor = 'pink';
+        // }
+
+        //事件委托
+        var ul = document.querySelector('ul');
+
+        ul.addEventListener('click',function(e){
+            for (let i = 0; i < this.children.length; i++) {
+                this.children[i].style.backgroundColor = '';
+                
+            }
+            e.target.style.backgroundColor = 'pink';
+        })
+
+    </script>
+</body>
+</html>

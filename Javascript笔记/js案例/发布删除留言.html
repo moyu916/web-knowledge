@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>坑布</button>
+    <ul></ul>
+
+    <script>
+        var con = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+
+        btn.addEventListener('click',function(){
+             if(con.value)
+             {
+                var li = document.createElement('li');
+                li.innerHTML = con.value + '<a href="javascript:;">删除</a>';
+                ul.appendChild(li);
+
+                var lis = document.querySelectorAll('a');
+                 for (var i = 0; i < lis.length; i++) {
+                    lis[i].addEventListener('click',function(){
+                    ul.removeChild(this.parentNode);
+                })
+                
+            }
+             }
+             
+            
+
+            
+
+            })
+            // var lis = document.querySelectorAll('a');
+            // console.log(lis.length);
+
+            //      for (var i = 0; i < lis.length; i++) {
+            //         lis[i].addEventListener('click',function(){
+            //             console.log(lis.length);
+            //         ul.removeChild(this.parentNode);
+            //     })
+            //      }
+
+
+    </script>
+</body>
+</html>
+//?????a???? javascript:; ?????????

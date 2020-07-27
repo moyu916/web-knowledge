@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        .fl {
+            float: left;
+            padding-left: 3px;
+        }
+        ul li a {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="fl">11
+            <a href="">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </a>
+        </li>
+        <li class="fl">22
+            <a href="">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </a>
+        </li>
+        <li class="fl">33
+            <a href="">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </a>
+        </li>
+        <li class="fl">44
+            <a href="">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </a>
+        </li>
+    </ul>
+
+    <!-- <script>
+        var lis = document.querySelector('ul').children;
+
+        for(var i=0;i<lis.length;i++)
+        {
+            lis[i].addEventListener('mouseover',function(){
+                this.children[0].style.display = 'block';
+            })
+            lis[i].addEventListener('mouseout',function(){
+                this.children[0].style.display = 'none';
+            })
+        }
+
+    </script> -->
+
+</body>
+</html>
+//错误，写的children[1],实际 11 22 33不是元素节点，而是文本结点，用children获取不到

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/tao.png" alt="">
+    <p></p>
+
+    <script>
+        var pic = document.querySelector('img');
+        var p = document.querySelector('p');
+
+        // setTimeout(callback,5000);
+        // function callback()
+        // {
+        //     pic.style.display =   'none';
+        // }
+        var time = 5;
+        callback();//防止一秒后才出现，先调用一次
+        var timer = setInterval(callback,1000);
+        function callback()
+        {
+            p.innerHTML = time + '秒后关闭广告';
+            time--;
+            if(time===-1)
+            {
+                clearInterval(timer);
+                pic.style.display =  'none';
+                p.style.display = 'none';
+            }
+        }
+         
+    
+    </script>
+</body>
+</html>

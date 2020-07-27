@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 25px 30px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var div = document.querySelector('div');
+
+        div.addEventListener('mousedown',function(e){
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.addEventListener('mousemove',move)
+            function move(e){
+                this.style.left = e.pageX - x + 'px';
+                this.style.top = e.pageY - y + 'px';
+            }
+            this.addEventListener('mouseup',function(e){
+                this.removeEventListener('mousemove',move);
+
+                
+            })
+
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+//错误，28 29行忘记 + ‘px’, 删除事件忘记怎么写；对比原版后面不用this 用的document
